@@ -1,64 +1,76 @@
-# README: Data Visualization and Categorization with Python
+# Analysis of the RAND Database of Worldwide Terrorism Incidents (RDWTI)
 
-This project demonstrates essential data visualization techniques, working with datasets, and performing categorical analysis. Below are the main sections of the project:
+This repository contains a comprehensive analysis of the RAND Database of Worldwide Terrorism Incidents (RDWTI), a dataset spanning terrorism incidents from 1968 to 2009. The analysis explores patterns, trends, and significant findings related to terrorism incidents globally, leveraging Python-based data processing and visualization techniques.
 
-## Data Visualization: Unemployment Rates by Education Level
-The project uses unemployment data (`ed_unemployment_historic.csv`) to explore trends in unemployment rates based on educational attainment.
+## Dataset Overview
 
-### Key Steps:
-1. **Loading the Data:**
-   - Uses `pandas` to load a CSV file into a DataFrame.
-   - Sets the `Year` column as the index for time-series plotting.
-2. **Renaming Columns:**
-   - Simplifies column names for easier access (e.g., `Masters_degree` → `Masters`).
-3. **Plotting:**
-   - Visualizes unemployment trends for different educational levels.
-   - Demonstrates:
-     - Color customization (e.g., using named colors like `'cornflowerblue'` and hex codes).
-     - Use of line styles, markers, and legends.
-     - Adding titles, labels, and annotations (e.g., marking the "Financial Crisis").
-4. **Advanced Visualization:**
-   - Creates comprehensive plots with all education levels.
-   - Highlights customization with dark gradient colors and appropriate legends.
+The RDWTI is a legacy RAND project that documents over **40,000 terrorism incidents** with detailed information on:
+- **Date, Location, and Perpetrators**
+- **Weapons, Injuries, and Fatalities**
+- **Incident Descriptions**
 
----
+The data was downloaded from [RAND's official website](https://www.rand.org/nsrd/projects/terrorism-incidents.html) and processed into a **CSV file** for analysis.
 
-## Terrorism Data Analysis: RAND Database
-Analyzes the motivations behind terrorism incidents using the RAND Database of Worldwide Terrorism Incidents.
+## Key Analyses and Findings
 
-### Key Steps:
-1. **Loading and Preparing Data:**
-   - Reads the dataset (`RAND_Database_of_Worldwide_Terrorism_Incidents.csv`) using `pandas`.
-   - Adds a `Case_ID` column and sets it as the index for better identification.
-2. **Motivation Categorization:**
-   - Uses a text-based keyword matching approach to categorize incidents as:
-     - `Economic`
-     - `Political`
-     - `Religious`
-     - Combinations of these categories (e.g., `Economic-Political`).
-3. **Categorization Logic:**
-   - Defines keywords and phrases for each category (e.g., "ransom" for `Economic`, "jihad" for `Religious`).
-   - Matches descriptions with these keywords to assign a category.
-4. **Results Visualization:**
-   - Counts and plots the frequency of each motivation category using bar charts.
+### 1. **Top 5 Countries with the Most Terrorism Incidents**
+- Iraq recorded the **highest number of incidents** with over 10,000 attacks.
+- Other hotspots included **West Bank/Gaza**, **Afghanistan**, **Thailand**, and **Colombia**.
 
----
+#### Visualization:
+![Bar Chart](assets/top5_countries.png)
 
-## Tools and Libraries
-The project leverages:
-- **`pandas`**: For data manipulation and preprocessing.
-- **`matplotlib`**: For plotting and visualization.
-- **`numpy`**: For numerical operations.
-- **Keyword Matching**: To categorize text data.
+### 2. **Top 10 Most Deadly Attacks**
+- The deadliest incident occurred in the **United States**, with **2,749 fatalities** (likely referencing the 9/11 attacks).
+- Other major incidents took place in **Iraq**, **Algeria**, **Russia**, and **India**.
 
----
+#### Visualization:
+![Horizontal Bar Chart](assets/top10_deadly_attacks.png)
 
-## Highlights
-1. **Educational Data:**
-   - Demonstrates practical visualization techniques to analyze unemployment rates over time.
-   - Customizes plots with legends, labels, and annotations.
-2. **Terrorism Data:**
-   - Illustrates text categorization with logical reasoning and keyword matching.
-   - Provides insights into terrorism motivations through advanced plotting.
+### 3. **Kidnapping-Related Incidents**
+- Over **4,291 incidents** mentioned terms like "kidnap," "abduction," or "hostage."
+- **33% of kidnapping-related incidents resulted in fatalities.**
 
-This project serves as a resource for anyone looking to explore data visualization and text-based categorization using Python.
+#### Top Countries for Kidnapping Mentions:
+1. Iraq
+2. Colombia
+3. Afghanistan
+4. Lebanon
+5. Kashmir
+
+#### Visualization:
+![Stacked Bar Chart](assets/kidnapping_mentions_by_country.png)
+
+### 4. **Incidents Involving Ransom**
+- Only **4.33%** of kidnapping-related incidents mentioned the word "ransom."
+- Top countries for ransom-related incidents include **Iraq** and **Colombia.**
+
+#### Visualization:
+![Pie Chart](assets/ransom_mentions_pie.png)
+
+### 5. **"Students" as Perpetrators**
+- "Students" were mentioned as perpetrators in **6 incidents** (~0.01% of the total).
+
+#### Visualization:
+![Donut Chart](assets/student_involvement_donut.png)
+
+### 6. **First Incident Mentioning a "Suicide Bomber"**
+- The **first mention** of a suicide bomber occurred in **1985 in Lebanon**, involving a car-bomb attack on Israeli soldiers.
+
+### 7. **Mentions of "Priests" or "Clergy"**
+- Terms like "priests" or "clergy" appeared in **23 incidents.**
+
+#### Visualization:
+![Donut Chart](assets/priests_mentions_donut.png)
+
+### 8. **Women as Terrorists**
+- The dataset did not identify any incidents where **women** were explicitly named as perpetrators.
+
+## Installation and Usage
+
+To replicate the analysis, follow these steps:
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/your-username/RDWTI-Terrorism-Analysis.git
+   cd RDWTI-Terrorism-Analysis
